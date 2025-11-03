@@ -1,0 +1,77 @@
+@use 'variable' as v;
+
+.infos-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    margin-top: 20px;
+
+    &__infos {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap; // Responsivo
+        gap: 24px;
+
+        // 🎨 Barra colorida Halloween
+        background: linear-gradient(90deg, v.$cDPurple, v.$cDPink);
+        padding: 20px 40px;
+        border-radius: 12px;
+        color: v.$colorF;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        max-width: 900px;
+        width: 100%;
+    }
+
+    &__item {
+        font-size: 14px;
+        color: v.$colorF;
+        font-family: 'Lato', sans-serif;
+
+        b {
+        font-size: 18px;
+        display: block;
+        font-family: 'Griffy', cursive;
+        color: v.$colorF;
+        }
+    }
+
+    &__button {
+        background-color: v.$colorF;
+        color: v.$cDPurple;
+        font-family: 'Lato', sans-serif;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 22px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+
+        &:hover {
+        background-color: v.$eventoName;
+        transform: scale(1.05);
+        }
+
+        @media (max-width: 640px){
+            display: block;
+            
+            &__infos{
+                display: block;
+
+                &__item{
+                    display: block;
+                }
+            }
+        }
+        
+        @media (max-width: 1024px){
+            &__infos{
+                gap: 16px;
+            }
+        }
+    }
+}

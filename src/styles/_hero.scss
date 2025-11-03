@@ -1,0 +1,59 @@
+@use 'components/fonts'as f;
+@use 'components/variable' as v;
+
+.hero{
+    padding-top: 64px;
+    padding-bottom: 100px;
+    background-image: url('../images/tema-halloween.webp');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed; // mantei a imagem fica, não distorce quando aumento ou diminuo o zoon 
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+
+    &__container{
+        position: relative;
+    }
+
+    &::before{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        content: ''; //cria somente um elemento por cima, mesmo que esteja vazio
+        opacity: .5;
+    }
+
+    &__text{
+        margin-top: 64px;
+        margin-bottom: 64px;
+        font-size: 50px;
+        line-height: 56px;
+        color: v.$txtHero;
+        text-align: center;
+    }
+
+    &__logo{
+        margin: 0 auto;
+        height: 200px;
+        display: block;
+    }
+
+    @media (max-width: 640px){
+        padding: 40px 0;
+
+        &__log{
+            line-height: 40px;
+        }
+
+        &__text{
+            font-size: 22px;
+            line-height: 24px;
+            margin: 24px 0;
+        }
+    }
+}
